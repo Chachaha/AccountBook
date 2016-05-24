@@ -1,0 +1,13 @@
+<template name="accountList">
+    <table>
+        <tr>
+            <td>은행</td>
+            <td>날짜</td>
+            <td>금액</td>
+            <td>장소</td>
+        </tr>
+        {{#each list}}
+            {{>accountListItem}}
+        {{/each}}
+    </table>
+</template>
