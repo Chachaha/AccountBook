@@ -6,6 +6,8 @@ Template.accountInput.events({
         var day = date.substring(8, 10);
         ABooks.insert({
             bank: tmpl.find('input[name=bank]').value,
+            year:year,
+            month:month,
             day: day,
             money: tmpl.find('input[name=money]').value,
             place: tmpl.find('input[name=place]').value
