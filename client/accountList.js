@@ -3,6 +3,6 @@
  */
 Template.accountList.helpers({
    list:function () {
-       return ABooks.find({}, {sort: {day: 1}});
+       return ABooks.find({}, {sort: {month:1, day:1}});
    }
 });
