@@ -1,9 +1,9 @@
 Session.set('month', 'all');
 
-Template.changeMonth.helpers({
-    month: function () {
-        return Session.get('month');
-    },
+Template.table.helpers({
+    // month: function () {
+    //     return Session.get('month');
+    // },
     month_total_money: function () {
         var month = String(Session.get('month'));
         if (month != 'all') {
@@ -15,10 +15,10 @@ Template.changeMonth.helpers({
                 arrM[i] = Number(arr[i].money);
                 tm += arrM[i];
             }
-            return month+"월의 사용금액은 "+tm+"원 입니다.";
+            return month + "월의 사용금액은 " + tm + "원 입니다.";
         }
         else
-            return "전체보기";
+            return;
     },
     month_list: function () {
         var month = String(Session.get('month'));
@@ -30,23 +30,19 @@ Template.changeMonth.helpers({
     isEmp: function () {
         var month = String(Session.get('month'));
 
-        if(month=='all'){
+        if (month == 'all') {
             if (ABooks.find({}).count() == 0) {
-                console.log("false");
                 return false;
             }
-            else{
-                console.log("true");
+            else {
                 return true;
             }
         }
-        else{
+        else {
             if (ABooks.find({month: month}).count() == 0) {
-                console.log("false");
                 return false;
             }
-            else{
-                console.log("true");
+            else {
                 return true;
             }
         }
@@ -55,7 +51,9 @@ Template.changeMonth.helpers({
 
 Template.changeMonth.events({
     'change #month_selector': function (evt) {
+        console.log("1");
         evt.preventDefault();
+
         console.log(evt.target);
         Session.set('month', evt.target.value);
     }

@@ -1,28 +1,25 @@
 <template name="changeMonth">
-    <label>
-        <h3>월별 지출액
-            <select id="month_selector">
-                <option value="all">전체보기</option>
-                <option value="01">1월</option>
-                <option value="02">2월</option>
-                <option value="03">3월</option>
-                <option value="04">4월</option>
-                <option value="05">5월</option>
-            </select>
-        </h3>
-    </label>
+    <div class="row valign-wrapper">
+        <!--<div class="col s3"><h6>월별 테이블 보기</h6></div>-->
+        <div class="col s3 left-align">
+            <div class="input-field ">
+                <select id="month_selector">
+                    <optgroup label="월 선택">
+                        <option value="all">전체보기</option>
+                        <option value="01">1월</option>
+                        <option value="02">2월</option>
+                        <option value="03">3월</option>
+                        <option value="04">4월</option>
+                        <option value="05">5월</option>
+                        <option value="06">6월</option>
+                    </optgroup>
+                </select>
+                <label>Select month</label>
+            </div>
+        </div>
 
-    {{#if isEmp}}
-        <p class="total_money">{{month_total_money}}</p>
-    <table>
-        {{> accountList}}
-        {{#each month_list}}
-            {{>accountListItem}}
-        {{/each}}
-        </table>
-    {{else}}
-        <p>{{month}}월의 지출금액이 없습니다.</p>
-    {{/if}}
-
+        <div class="col s4 offset-s4 right-align">{{>input_modal}}</div>
+    </div>
+    {{>table}}
 
 </template>

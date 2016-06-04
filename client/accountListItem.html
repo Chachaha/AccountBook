@@ -1,12 +1,22 @@
 <template name="accountListItem">
+    <tbody>
     <tr>
-        <td align="center">{{this.bank}}</td>
-        <td align="center">{{this.month}}월</td>
-        <td align="center">{{this.day}}일</td>
-        <td align="center">{{this.money}}원</td>
-        <td align="center">{{this.place}}</td>
-        <td align="center">
-            <button class="remove">삭제</button>
+        <td>{{this.bank}}</td>
+        <td>{{this.month}}월 {{this.day}}일</td>
+        <!--<td></td>-->
+        <td>{{this.money}}원</td>
+        <td>{{this.place}}</td>
+        <td>
+            <a class="waves-effect waves-light btn modal-trigger" id="remove_item" href="#modal1">삭제</a>
         </td>
     </tr>
+    </tbody>
+    <style>
+        td{
+            padding:5px;
+        }
+    </style>
+
+
+
 </template>

@@ -1,0 +1,13 @@
+<template name="table">
+    {{#if isEmp}}
+        <p class="total_money">{{month_total_money}}</p>
+        <table class="centered bordered">
+            {{> table_header}}
+            {{#each month_list}}
+                {{>accountListItem}}
+            {{/each}}
+        </table>
+    {{else}}
+        <p>{{month}}월의 지출금액이 없습니다.</p>
+    {{/if}}
+</template>
