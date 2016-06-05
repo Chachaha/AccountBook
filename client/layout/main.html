@@ -5,20 +5,17 @@
 <body>
 <nav>
     <div class="nav-wrapper teal">
-        <a href="#" class="brand-logo center">Account Book</a>
+        <a href="{{pathFor 'home'}}" class="brand-logo center">Account Book</a>
         <ul id="nav-mobile" class="left">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Graph</a></li>
+            <li><a href="{{pathFor 'home'}}">Home</a></li>
+            <li><a href="{{pathFor 'graph'}}">Graph</a></li>
         </ul>
         <ul id="nav-mobile" class="right">
             {{> loginButtons}}
         </ul>
     </div>
 </nav>
-{{#if currentUser}}
-<p>로그인 되었습니다.</p>
-{{/if}}
-{{>changeMonth}}
+<!--{{>home}}-->
 
 
 </body>

@@ -8,6 +8,13 @@
             {{/each}}
         </table>
     {{else}}
-        <p>{{month}}월의 지출금액이 없습니다.</p>
+    <div class="row">
+        <div class="col s10 offset-s1" >
+            <div class="card-panel center-align teal z-depth-3">
+                <span class="white-text"><h5>지출내역이 없습니다.</h5></span>
+            </div>
+        </div>
+    </div>
+
     {{/if}}
 </template>
