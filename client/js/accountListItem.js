@@ -3,7 +3,8 @@ Template.accountListItem.events({
     //     ABooks.remove({_id:this._id});
     // }
     'click #remove_item':function () {
-        ABooks.remove({_id:this._id});
+        // ABooks.remove({_id:this._id}):
+        Meteor.call("deleteAccountBook", {_id:this._id});
     }
     
 });

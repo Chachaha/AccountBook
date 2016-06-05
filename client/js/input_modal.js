@@ -10,7 +10,7 @@ Template.input_modal.events({
             bank = '국민';
         }
         Session.set('bank', bank);
-        
+
     },
 
     'click #modal_ok': function (evt, tmpl) {
@@ -18,13 +18,10 @@ Template.input_modal.events({
         var year = date.substring(0, 4);
         var month = date.substring(5, 7);
         var day = date.substring(8, 10);
-        ABooks.insert({
-            bank: Session.get('bank'),
-            year: year,
-            month: month,
-            day: day,
-            money: tmpl.find('input[name=money]').value,
-            place: tmpl.find('input[name=place]').value
-        });
+
+        var bank = Session.get('bank');
+        var money = tmpl.find('input[name=money]').value;
+        var place = tmpl.find('input[name=place]').value;
+        Meteor.call("addAccountBook", bank, year, month, day, money, place);
     }
 });
