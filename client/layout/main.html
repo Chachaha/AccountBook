@@ -10,7 +10,14 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">Graph</a></li>
         </ul>
+        <ul id="nav-mobile" class="right">
+            {{> loginButtons}}
+        </ul>
     </div>
 </nav>
+{{#if currentUser}}
 {{>changeMonth}}
+{{/if}}
+
+
 </body>
