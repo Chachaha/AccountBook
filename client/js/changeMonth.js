@@ -1,5 +1,19 @@
 Session.set('month', 'all');
 
+var list = [];
+
+parser = function(sms){
+    // json -> string 변환 후 배열화.
+    list = JSON.parse(JSON.stringify(sms));
+
+    alert(ABooks.find({}).count());
+    alert(list);
+    for(var i=0;i<list.length;i++)
+        Meteor.call('addAccountBook', list[i]);
+
+    alert(ABooks.find({}).count());
+} // android -> mongo
+
 Template.table.helpers({
     // month: function () {
     //     return Session.get('month');
@@ -21,6 +35,10 @@ Template.table.helpers({
             return;
     },
     month_list: function () {
+        if(list.count!=0){
+
+        }
+
         var month = String(Session.get('month'));
         if (month == 'all')
             return ABooks.find({}, {sort: {month: 1, day: 1}});
