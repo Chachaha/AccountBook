@@ -1,9 +1,9 @@
 Session.set('bank', '농협');
 
-changeMonth = function(month){
+changeMonth = function (month) {
     var mon;
 
-    switch (month){
+    switch (month) {
         case 'Jan':
             mon = "01";
             break;
@@ -47,7 +47,7 @@ changeMonth = function(month){
 } // english month -> number month
 
 Template.input_modal.events({
-    'click a' : function(event){
+    'click #add_account': function (event) {
         event.preventDefault();
 
         // $('.modal-trigger').leanModal();
@@ -59,7 +59,7 @@ Template.input_modal.events({
 
         date = year + "-" + changeMonth(month) + "-" + day;
         // input type에 맞게 날짜 변경
-        
+
         $('#addon3a').val(date);
         // 날짜 대입
 
@@ -78,17 +78,21 @@ Template.input_modal.events({
         var money = tmpl.find('input[name=money]').value;
         var place = tmpl.find('input[name=place]').value;
 
-        if(date == "")
+        if (date == "")
             alert("날짜를 입력해주세요");
 
-        else if(money == "")
+        else if (money == "")
             alert("금액을 입력해주세요.");
 
-        else if(place =="")
+        else if (place == "")
             alert("장소를 입력해주세요.")
 
-        else if(date!="" && money !="" && place!=""){
-            Meteor.call("addAccountBook", bank, year, month, day, money, place);
+        else if (date != "" && money != "" && place != "") {
+            var stringToJson = {
+                "money": money, "month": month, "year": year, "time": "17:35", "bank": bank,
+                "day": day, "place": place
+            };
+            Meteor.call("addAccountBook", stringToJson);
 
             tmpl.find('input[name=day]').value = "";
             tmpl.find('input[name=money]').value = "";

@@ -20,3 +20,4 @@ materialize:materialize
 accounts-password
 accounts-ui
 iron:router
+accounts-google
