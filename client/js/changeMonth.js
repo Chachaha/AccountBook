@@ -15,9 +15,6 @@ parser = function(sms){
 } // android -> mongo
 
 Template.table.helpers({
-    // month: function () {
-    //     return Session.get('month');
-    // },
     month_total_money: function () {
         var month = String(Session.get('month'));
         if (month != 'all') {
@@ -38,12 +35,16 @@ Template.table.helpers({
         if(list.count!=0){
 
         }
-
+        // var abookList = ABooks.find({}, {sort: {month: 1}});
         var month = String(Session.get('month'));
-        if (month == 'all')
-            return ABooks.find({}, {sort: {month: 1, day: 1}});
+        if (month == 'all'){
+            // console.log(abookList);
+            return ABooks.find({}, {sort: {month: 1}});
+        }
+
 
         return ABooks.find({month: month}, {sort: {month: 1, day: 1}});
+        // return abookList.find({month:this.month});
     },
     isEmp: function () {
         var month = String(Session.get('month'));
@@ -69,10 +70,9 @@ Template.table.helpers({
 
 Template.changeMonth.events({
     'change #month_selector': function (evt) {
-        console.log("1");
         evt.preventDefault();
 
-        console.log(evt.target);
+        // console.log(evt.target);
         Session.set('month', evt.target.value);
     }
 });

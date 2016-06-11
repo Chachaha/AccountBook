@@ -1,0 +1,13 @@
+<template name="HomeLayout">
+    <header>
+        {{>fixed_top}}
+    </header>
+    <main>
+        {{#if currentUser}}
+            {{>layout_top}}
+            {{>layout_mid}}
+        {{else}}
+            {{>no_login}}
+        {{/if}}
+    </main>
+</template>

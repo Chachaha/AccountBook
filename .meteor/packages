@@ -19,5 +19,6 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 materialize:materialize
 accounts-password
 accounts-ui
-iron:router
 accounts-google
+kadira:flow-router
+kadira:blaze-layout

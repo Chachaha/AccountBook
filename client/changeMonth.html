@@ -1,26 +1,19 @@
 <template name="changeMonth">
-    <div class="row valign-wrapper">
-        <!--<div class="col s3"><h6>월별 테이블 보기</h6></div>-->
-        <div class="col s3 left-align">
-            <div class="input-field ">
-                <select id="month_selector">
-                    <optgroup label="월 선택">
-                        <option value="all">전체보기</option>
-                        <option value="01">1월</option>
-                        <option value="02">2월</option>
-                        <option value="03">3월</option>
-                        <option value="04">4월</option>
-                        <option value="05">5월</option>
-                        <option value="06">6월</option>
-                    </optgroup>
-                </select>
-                <label>Select month</label>
-            </div>
-        </div>
 
-        <div class="col s4 offset-s4 right-align">{{>input_modal}}</div>
-
+    <div class="input-field ">
+        <select id="month_selector">
+            <optgroup label="월 선택">
+                <option value="all">전체보기</option>
+                <option value="01">1월</option>
+                <option value="02">2월</option>
+                <option value="03">3월</option>
+                <option value="04">4월</option>
+                <option value="05">5월</option>
+                <option value="06">6월</option>
+            </optgroup>
+        </select>
+        <label>Select month</label>
     </div>
-    {{>table}}
+
 
 </template>

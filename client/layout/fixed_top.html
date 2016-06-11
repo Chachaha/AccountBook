@@ -1,0 +1,23 @@
+<template name="fixed_top">
+    <nav>
+        <div class="nav-wrapper teal">
+            <a href="{{pathFor 'home'}}" class="brand-logo center">Account Book</a>
+
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+            <!--크기가 클 때-->
+            <ul class="left hide-on-med-and-down">
+                <li>{{> loginButtons}}</li>
+                <li><a href="{{pathFor 'graph'}}">Graph</a></li>
+            </ul>
+
+            <!--크기가 작아졌을 때-->
+            <ul class="side-nav" id="mobile-demo">
+                <li>{{> loginButtons}}</li>
+                <li><a href="{{pathFor 'graph'}}">Graph</a></li>
+            </ul>
+
+        </div>
+        <!--{{>Router}}-->
+    </nav>
+</template>

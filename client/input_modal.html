@@ -1,53 +1,8 @@
 <template name="input_modal">
-    <!--<a href="#myModal" class="btn btn-raised btn-primary" data-toggle="modal">가계부 직접 입력</a>-->
-    <!--&lt;!&ndash; Modal &ndash;&gt;-->
-    <!--<div class="modal" id="myModal">-->
-        <!--<div class="modal-dialog">-->
-            <!--<div class="modal-content">-->
-                <!--<div class="modal-header">-->
-                    <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
-                    <!--<h4 class="modal-title">가계부 입력</h4>-->
-                <!--</div>-->
-                <!--<div class="form-group">-->
-                    <!--<label for="select111" class="col-md-2 control-label">Select</label>-->
-                    <!--<div class="col-md-10">-->
-                        <!--<select id="select_bank" class="form-control">-->
-                            <!--<option value="nonghyup">농협은행</option>-->
-                            <!--<option value="kookmin">국민은행</option>-->
-                        <!--</select>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="form-group label-floating">-->
-                    <!--<div class="input-group">-->
-                        <!--<span class="input-group-addon"><i class="material-icons">attach_money</i></span>-->
-                        <!--<label class="control-label" for="addon3a">금액 입력</label>-->
-                        <!--<input type="text" id="addon3a" class="form-control" name="money">-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="form-group label-floating">-->
-                    <!--<div class="input-group">-->
-                        <!--<span class="input-group-addon"><i class="material-icons">date_range</i></span>-->
-                        <!--<label class="control-label" for="addon3a"></label>-->
-                        <!--<input type="date" id="addon3a" class="form-control" name="day">-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="form-group label-floating">-->
-                    <!--<div class="input-group">-->
-                        <!--<span class="input-group-addon"><i class="material-icons">place</i></span>-->
-                        <!--<label class="control-label" for="addon3a">장소 입력</label>-->
-                        <!--<input type="text" id="addon3a" class="form-control" name="place">-->
-                    <!--</div>-->
-                <!--</div>-->
-
-                <!--<div class="modal-footer">-->
-                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>-->
-                    <!--<button type="button" class="btn btn-primary" data-dismiss="modal" id="modal_ok">확인</button>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
-    <a class="modal-trigger waves-effect waves-light btn" href="#input_modal" id="add_account">가계부 직접 입력</a>
+    <!--모달 버튼-->
+    <a class="modal-trigger waves-effect waves-light btn valign-wrapper" href="#input_modal" id="add_account">
+        <i class="large material-icons">playlist_add</i>
+    </a>
 
     <!-- Modal Structure -->
     <div id="input_modal" class="modal modal-fixed-footer">
@@ -56,60 +11,44 @@
                 <h4 class="modal-title">가계부 입력</h4>
             </div>
 
-            <!--<div class="form-group">-->
-            <!--<label for="select111" class="col-md-2 control-label">Select</label>-->
-            <!--<div class="col-md-10">-->
-            <!--<select id="select_bank" class="form-control">-->
-            <!--<option value="nonghyup">농협은행</option>-->
-            <!--<option value="kookmin">국민은행</option>-->
-            <!--</select>-->
-            <!--</div>-->
-            <!--</div>-->
+            <!--지불방식 선택-->
             <div class="form-group label-floating">
                 <div class="input-field">
                     <select id="select_bank" class="form-control">
+                        <option value="cash">현금</option>
                         <option value="nonghyup">농협은행</option>
                         <option value="kookmin">국민은행</option>
                     </select>
                 </div>
 
+                <!--금액입력-->
                 <div class="input-field">
                     <i class="material-icons prefix">attach_money</i>
                     <input id="icon_prefix" type="number" class="validate" name="money">
                     <label for="icon_prefix">금액입력</label>
                 </div>
-                <!--<div class="input-group">-->
-                <!--<span class="input-group-addon"><i class="material-icons">attach_money</i></span>-->
-                <!--<label class="control-label" for="addon3a">금액 입력</label>-->
-                <!--<input type="text" id="addon3a" class="form-control" name="money">-->
-                <!--</div>-->
             </div>
+
+            <!--날짜 선택-->
             <div class="form-group label-floating">
                 <div class="input-field">
                     <i class="material-icons prefix">date_range</i>
                     <label class="control-label" for="addon3a"></label>
                     <input type="date" id="addon3a" class="form-control" name="day">
                 </div>
-                <!--<div class="input-group">-->
-                <!--<span class="input-group-addon"><i class="material-icons">date_range</i></span>-->
-                <!--<label class="control-label" for="addon3a"></label>-->
-                <!--<input type="date" id="addon3a" class="form-control" name="day">-->
-                <!--</div>-->
             </div>
+
+            <!--장소 입력-->
             <div class="form-group label-floating">
                 <div class="input-field">
                     <i class="material-icons prefix">place</i>
                     <input id="icon_prefix" type="text" class="validate" name="place">
                     <label for="icon_prefix">장소입력</label>
                 </div>
-                <!---->
-                <!--<div class="input-group">-->
-                <!--<span class="input-group-addon"><i class="material-icons">place</i></span>-->
-                <!--<label class="control-label" for="addon3a">장소 입력</label>-->
-                <!--<input type="text" id="addon3a" class="form-control" name="place">-->
-                <!--</div>-->
             </div>
         </div>
+
+        <!--확인 취소-->
         <div class="modal-footer">
             <button type="button" class="modal-action waves-effect waves-green btn-flat" id="modal_ok">확인</button>
             <button type="button" class="modal-action waves-effect waves-green btn-flat modal-close">취소</button>

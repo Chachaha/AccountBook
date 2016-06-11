@@ -1,3 +1,5 @@
-Meteor.publish("abooks", function (sort) {
-    return ABooks.find();
+Meteor.publish("all_abook", function () {
+    return ABooks.find({
+        owner:this.userId
+    });
 });

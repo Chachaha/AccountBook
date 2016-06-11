@@ -1,4 +1,6 @@
 <template name="table">
+
+    <!--만약 지출내역이 있다면-->
     {{#if isEmp}}
         <p class="total_money">{{month_total_money}}</p>
         <table class="centered bordered">
@@ -7,6 +9,8 @@
                 {{>accountListItem}}
             {{/each}}
         </table>
+
+     <!--만약 지출내역이 없다면   -->
     {{else}}
     <div class="row">
         <div class="col s10 offset-s1" >
@@ -15,6 +19,6 @@
             </div>
         </div>
     </div>
-
     {{/if}}
+
 </template>
