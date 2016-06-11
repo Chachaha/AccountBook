@@ -1,0 +1,8 @@
+<template name="home">
+    {{#if currentUser}}
+        {{>layout_top}}
+        {{>layout_mid}}
+    {{else}}
+        {{>no_login}}
+    {{/if}}
+</template>

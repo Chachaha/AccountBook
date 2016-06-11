@@ -20,5 +20,4 @@ materialize:materialize
 accounts-password
 accounts-ui
 accounts-google
-kadira:flow-router
-kadira:blaze-layout
+iron:router
