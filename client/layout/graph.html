@@ -2,11 +2,12 @@
     {{#if currentUser}}
         <div class="panel panel-primary">
             <div class="panel-body">
-                <h1>그래프가 올곳@@</h1>
+                {{> highchartsHelper chartId="test" chartWidth="75%" charHeight="100%" chartObject=topGenresChart}}
+            </div>
+            <br>
+            <div id="container-pie">
+                {{> highchartsHelper chartId="test1" chartWidth="75%" charHeight="100%" chartObject=pieChart}}
             </div>
         </div>
-    {{else}}
-        {{>no_login}}
     {{/if}}
-
 </template>

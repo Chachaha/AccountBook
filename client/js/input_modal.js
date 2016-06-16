@@ -95,7 +95,7 @@ Template.input_modal.events({
         //입력창들이 빈칸이 아니면 addAccountBook 매서드 호출    
         else if (date != "" && money != "" && place != "") {
             var stringToJson = {
-                "money": money, "month": month, "year": year, "time": "17:35", "bank": bank,
+                "money": Number(money), "month": month, "year": year, "time": "17:35", "bank": bank,
                 "day": day, "place": place,"owner":Meteor.userId()
             };
             Meteor.call("addAccountBook", stringToJson);
@@ -111,6 +111,7 @@ Template.input_modal.events({
     },
     'change #select_bank': function (evt) {
         var bank = '';
+
         if(evt.target.value == 'cash'){
             bank = '현금';
         }

@@ -48,7 +48,6 @@ Template.table.helpers({
     },
     isEmp: function () {
         var month = String(Session.get('month'));
-
         if (month == 'all') {
             if (ABooks.find({}).count() == 0) {
                 return false;
